@@ -1,6 +1,3 @@
-parameters:
-  buildConfiguration: 'Release'
-
 steps:
 - task: DocNetCoreCLI@2
   displayName: 'Build the project - ${{ parameters.buildConfiguration }}'
@@ -10,7 +7,7 @@ steps:
     projects: '**/*.csproj'
 
 - task: DotNetCoreCLI@2
-  displayName: 'Publish the project - ${{ paramters.buildConfiguration }}'
+  displayName: 'Publish the project - ${{ parameters.buildConfiguration }}'
   inputs:
     command: 'publish'
     projects: '**/*.csproj'
